@@ -6,14 +6,11 @@ const iris = require('.');
 
 var dataset = iris.getDataset();
 assert.strictEqual(dataset.length, 150);
-assert.strictEqual(dataset[0].length, 5);
+assert.deepStrictEqual(dataset[0], [5.1,3.5,1.4,0.2,"setosa"]);
 
 var numbers = iris.getNumbers();
 assert.strictEqual(numbers.length, 150);
-assert.strictEqual(numbers[0].length, 4);
-for (var i = 0; i < numbers[0].length; i++) {
-    assert.strictEqual(typeof numbers[0][i], 'number');
-}
+assert.deepStrictEqual(numbers[0], [5.1,3.5,1.4,0.2]);
 
 var classes = iris.getClasses();
 assert.strictEqual(classes.length, 150);
