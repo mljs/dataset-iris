@@ -1,6 +1,6 @@
 {
   "name": "ml-dataset-iris",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Iris flower data set",
   "main": "src/iris.js",
   "scripts": {
@@ -10,7 +10,10 @@
     "type": "git",
     "url": "git+https://github.com/mljs/dataset-iris.git"
   },
-  "keywords": ["iris", "dataset"],
+  "keywords": [
+    "iris",
+    "dataset"
+  ],
   "author": "Michaël Zasso",
   "license": "MIT",
   "bugs": {
