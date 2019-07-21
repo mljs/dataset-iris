@@ -53,11 +53,11 @@ exports.getCrossValidationSets = function(k, options) {
 
 switch(by) {
     case 'folds': {
-      res.map((x) => x.map((y) => y - 1));
+      res = res.map((x) => x.map((y) => y - 1));
     }
     break;
     case 'trainTest': {
-      res.map((x) => x.map((y) => y - 1));
+      res = res.map((x) => x.map((y) => y - 1));
       let folds = [];
       for (let cv of res) {
         let testCv = [];

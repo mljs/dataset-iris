@@ -4,13 +4,13 @@ declare module 'ml-iris-dataset' {
     by?: 'folds' | 'trainTest'
   }
 
-  export function getDataset()
-  
-  export function getNumbers()
+  export function getDataset(): Array<Array<number | string>>;
 
-  export function getClasses()
+  export function getNumbers(): Array<Array<number>>;
 
-  export function getDistinctClasses()
+  export function getClasses(): Array<string>;
 
-  export function getCrossValidationSets(k: number, options?: cvOptions): array;
+  export function getDistinctClasses(): Array<string>;
+
+  export function getCrossValidationSets(k: number, options?: cvOptions): Array<any>;
 }

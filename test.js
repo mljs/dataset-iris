@@ -27,3 +27,9 @@ assert.strictEqual(cvSetsbyFolds.length, 7);
 
 let cvSetsbyTrainTest = iris.getCrossValidationSets(5, {idx: 0, by: 'trainTest'});
 assert.strictEqual(cvSetsbyTrainTest.length, 5);
+
+let max = cvSets[0].reduce((acc, curr) => Math.max(curr, acc));
+let min = cvSets[0].reduce((acc, curr) => Math.min(curr, acc));
+assert.strictEqual(max, 149);
+assert.strictEqual(min, 0);
+
