@@ -18,3 +18,18 @@ assert.strictEqual(classes[0], 'setosa');
 
 var distinctClasses = iris.getDistinctClasses();
 assert.deepStrictEqual(distinctClasses, ['setosa', 'versicolor', 'virginica']);
+
+let cvSets = iris.getCrossValidationSets(7, {idx: 0});
+assert.strictEqual(cvSets.length, 7);
+
+let cvSetsbyFolds = iris.getCrossValidationSets(7, {idx: 1, by: 'folds'});
+assert.strictEqual(cvSetsbyFolds.length, 7);
+
+let cvSetsbyTrainTest = iris.getCrossValidationSets(5, {idx: 0, by: 'trainTest'});
+assert.strictEqual(cvSetsbyTrainTest.length, 5);
+
+let max = cvSets[0].reduce((acc, curr) => Math.max(curr, acc));
+let min = cvSets[0].reduce((acc, curr) => Math.min(curr, acc));
+assert.strictEqual(max, 149);
+assert.strictEqual(min, 0);
+
