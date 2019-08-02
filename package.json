@@ -6,6 +6,10 @@
   "scripts": {
     "test": "node test.js"
   },
+  "files": [
+    "src",
+    "index.d.ts"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mljs/dataset-iris.git"

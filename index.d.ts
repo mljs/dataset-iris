@@ -1,4 +1,4 @@
-declare module 'ml-iris-dataset' {
+declare module 'ml-dataset-iris' {
   export interface cvOptions {
     /**
      * Index of the cv sets. Either 0 or 1.
