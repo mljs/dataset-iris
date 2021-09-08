@@ -2,6 +2,8 @@ import cvSetsK5 from '../data/cvK5.json';
 import cvSetsK7 from '../data/cvK7.json';
 import raw from '../data/iris.json';
 
+import getNumericalClasses from './utilities/getNumericalClasses';
+
 const dataset = raw as [number, number, number, number, string][];
 
 export function getDataset(): (number | string)[][] {
@@ -14,6 +16,11 @@ export function getNumbers(): number[][] {
 
 export function getClasses(): string[] {
   return dataset.map((sample) => sample[4]);
+}
+
+export function getClassesAsNumber(): number[] {
+  const classes = dataset.map((sample) => sample[4]);
+  return getNumericalClasses(classes);
 }
 
 export function getDistinctClasses(): [string, string, string] {

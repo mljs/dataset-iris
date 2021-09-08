@@ -19,6 +19,14 @@ describe('Iris dataset', () => {
     expect(classes[0]).toStrictEqual('setosa');
   });
 
+  it('Getting classes as numbers', () => {
+    const classes = iris.getClassesAsNumber();
+    expect(classes).toHaveLength(150);
+    expect(classes[0]).toStrictEqual(0);
+    expect(classes[50]).toStrictEqual(1);
+    expect(classes[100]).toStrictEqual(2);
+  });
+
   it('Distinc classes', () => {
     const distinctClasses = iris.getDistinctClasses();
     expect(distinctClasses).toStrictEqual([
