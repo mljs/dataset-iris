@@ -2,26 +2,52 @@
   "name": "ml-dataset-iris",
   "version": "1.1.1",
   "description": "Iris flower data set",
-  "main": "src/iris.js",
-  "scripts": {
-    "test": "node test.js"
-  },
+  "main": "./lib/index.js",
+  "module": "./lib-esm/index.js",
+  "types": "./lib/index.d.ts",
+  "keywords": [],
+  "author": "Michaël Zasso",
+  "license": "MIT",
   "files": [
     "src",
-    "index.d.ts"
+    "lib",
+    "lib-esm"
   ],
+  "scripts": {
+    "check-types": "tsc --noEmit",
+    "clean": "rimraf lib lib-esm",
+    "eslint": "eslint src --cache",
+    "eslint-fix": "npm run eslint -- --fix",
+    "prepack": "npm run tsc",
+    "prettier": "prettier --check src",
+    "prettier-write": "prettier --write src",
+    "test": "npm run test-coverage && npm run eslint && npm run prettier && npm run check-types",
+    "test-coverage": "npm run test-only -- --coverage",
+    "test-only": "jest",
+    "tsc": "npm run clean && npm run tsc-cjs && npm run tsc-esm",
+    "tsc-cjs": "tsc --project tsconfig.cjs.json",
+    "tsc-esm": "tsc --project tsconfig.esm.json"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mljs/dataset-iris.git"
   },
-  "keywords": [
-    "iris",
-    "dataset"
-  ],
-  "author": "Michaël Zasso",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/mljs/dataset-iris/issues"
   },
-  "homepage": "https://github.com/mljs/dataset-iris#readme"
+  "homepage": "https://github.com/mljs/dataset-iris#readme",
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.0.1",
+    "eslint": "^7.32.0",
+    "eslint-config-cheminfo-typescript": "^8.0.9",
+    "jest": "^27.1.0",
+    "prettier": "^2.3.2",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^27.0.5",
+    "typescript": "^4.4.2"
+  }
 }
