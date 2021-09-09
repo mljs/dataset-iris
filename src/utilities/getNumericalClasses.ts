@@ -5,7 +5,7 @@
  */
 
 export default function getNumericalClasses(labels: string[]) {
-  const categories = [...new Set(labels)].sort((a: any, b: any) => a - b);
+  const categories = [...new Set(labels)];
   const result = [];
   for (const label of labels) {
     for (let j = 0; j < categories.length; j++) {

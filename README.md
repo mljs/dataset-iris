@@ -14,10 +14,35 @@ Iris flower data set.
 ## Usage
 
 ```js
-import { myModule } from 'ml-dataset-iris';
+import {
+  getClasses,
+  getClassesAsNumber,
+  getCrossValidationSets,
+  getDataset,
+  getDistinctClasses,
+  getNumbers,
+} from 'ml-dataset-iris';
 
-const result = myModule(args);
-// result is ...
+const dataset = getDataset();
+console.log(dataset[0]) // [5.1, 3.5, 1.4, 0.2, 'setosa']
+
+const numbers = getNumbers();
+console.log(numbers[0]) // [5.1, 3.5, 1.4, 0.2]
+
+const classes = getClasses();
+console.log(classes[0]) // setosa
+
+const classes = getClassesAsNumber();
+console.log(classes[0]) // 0
+console.log(classes[50]) // 1
+console.log(classes[100]) // 2
+
+const distinctClasses = iris.getDistinctClasses();
+console.log(distinctClasses) // ['setosa', 'versicolor', 'virginica']
+
+const cvSetsByFolds = iris.getCrossValidationSets(7, { idx: 1, by: 'folds' });
+console.log(cvSetsByFolds.length) // 7
+
 ```
 
 ## License

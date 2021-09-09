@@ -1,7 +1,6 @@
-import cvSetsK5 from '../data/cvK5.json';
-import cvSetsK7 from '../data/cvK7.json';
-import raw from '../data/iris.json';
-
+import cvSetsK5 from './data/cvSetsK5.json';
+import cvSetsK7 from './data/cvSetsK7.json';
+import raw from './data/iris.json';
 import getNumericalClasses from './utilities/getNumericalClasses';
 
 const dataset = raw as [number, number, number, number, string][];
