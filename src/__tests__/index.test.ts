@@ -1,4 +1,4 @@
-import * as iris from '../iris';
+import * as iris from '..';
 
 describe('Iris dataset', () => {
   it('Testing whole dataset', () => {
