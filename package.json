@@ -1,6 +1,6 @@
 {
   "name": "ml-dataset-iris",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Iris flower data set",
   "main": "./lib/index.js",
   "module": "./lib-esm/index.js",
